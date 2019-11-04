@@ -1,0 +1,61 @@
+@import '../../../../lo/layout/layout.mixin';
+
+//Exposed style values
+$tab-bg-color: darkred !default;
+$tab-font-color: white !default;
+$tab-active-bg-color: red !default;
+$tab-hover-bg-color: red !default;
+
+:host{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: 0 auto;
+
+    .tab-organizer-menu{
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        ul {
+            display: flex;
+            list-style: none;
+            flex: 1;
+            flex-direction: row;
+            margin: 0;
+            padding: 0;
+            li{
+                flex: 1;
+                min-height: 50px;
+                background: $tab-bg-color;
+                color: $tab-font-color;
+                font-weight: bold;
+                text-align: center;
+                border-bottom: 1px solid white;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                span{
+                    display: block;
+                    margin: 0 auto;
+                }
+
+                cursor: pointer;
+                &:hover{
+                    background: $tab-hover-bg-color;
+                }
+                &.active{
+                    background: $tab-active-bg-color;
+                }
+            }
+        }
+    }
+
+    .tab-organizer-content{
+        flex: 2;
+        padding: 20px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+}

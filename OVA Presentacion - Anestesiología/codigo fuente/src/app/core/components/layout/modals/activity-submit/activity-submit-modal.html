@@ -1,0 +1,27 @@
+<div class="activity-submit-modal"
+    [ngClass]="{'error': !correct, 'success': correct}"
+    *ngIf="data">
+    <h1 class="activity-submit-modal-title">
+        {{i18n.title}}
+    </h1>
+    <div class="result-icon-container">
+        <i *ngIf="correct" class="fas fa-check-circle result-icon"></i>
+        <i *ngIf="!correct" class="fas fa-times-circle result-icon"></i>
+    </div>
+    <h2 class="activity-submit-modal-msg">
+        {{i18n.msg}}
+    </h2>
+    <p class="activity-submit-modal-reminder">
+        <span *ngIf="!correct && remainingAttempts > 0">
+            {{i18n.reminder.attemptsRemainingBefore}} {{remainingAttempts}}
+            <span *ngIf="remainingAttempts > 1">{{i18n.reminder.attemptsRemainingAfterPlural}}</span>
+            <span *ngIf="remainingAttempts === 1">{{i18n.reminder.attemptsRemainingAfterSingular}}</span>
+        </span>
+        <span *ngIf="!correct && remainingAttempts === 0">
+            {{i18n.reminder.noAttemptsRemaining}}
+        </span>
+    </p>
+    <div class="back-to-menu-container">
+        <button class="back-to-menu" *ngIf="correct" (click)="backToMenu()">Regresar al menú</button>
+    </div>
+</div>

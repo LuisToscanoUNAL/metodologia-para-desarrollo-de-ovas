@@ -1,0 +1,11 @@
+<div class="lo-modal-container" *ngIf="shouldDisplayModal">
+    <div class="lo-modal-content">
+        <div *ngIf="!hideCloseIcon" (click)="close()" class="lo-modal-close-icon"><i class="fas fa-times-circle"></i></div>
+        <div class="lo-modal-content-scroll">
+            <course-column
+                [LOCurrentState]="LOCurrentState"
+                [componentInner]="innerComponent">
+            </course-column>
+        </div>
+    </div>
+</div>

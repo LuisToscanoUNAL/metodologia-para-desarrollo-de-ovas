@@ -1,0 +1,7 @@
+<course-column
+*ngFor='let col of colArray; trackBy: index;'
+[componentInner]="col.getContent()"
+[style.flex]="col.flex"
+[LOCurrentState]="LOCurrentState"
+[ngStyle]="col.getStyle()"
+[ngClass]="col.getClasses()"></course-column>

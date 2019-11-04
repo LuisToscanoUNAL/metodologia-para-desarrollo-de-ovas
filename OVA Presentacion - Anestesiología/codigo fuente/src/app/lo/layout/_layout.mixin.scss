@@ -1,0 +1,27 @@
+/* COLORS */
+$color-scheme-1: #142325;
+$color-scheme-2: #11434A;
+$color-scheme-3: #3B0D8D;
+$color-scheme-4: #643DBF;
+$color-scheme-5: #D2ECD6;
+
+$basic-color-white: #fff;
+$basic-color-black: #000;
+
+/*** LAYOUT ***/
+$layout-bg-color: white !default;
+$content-bg-color: white !default;
+
+
+/******  MODAL  *******/
+$modal-close-btn-color: $color-scheme-5;
+$modal-close-btn-hover-color: $color-scheme-5;
+$modal-close-btn-active-color: $color-scheme-2;
+
+/*** TAB ORGANIZER ***/
+$tab-bg-color: $color-scheme-3;
+$tab-active-bg-color: $color-scheme-4;
+$tab-hover-bg-color: $color-scheme-4;
+//$tab-font-color: white !default;
+
+

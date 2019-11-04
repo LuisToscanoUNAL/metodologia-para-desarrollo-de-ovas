@@ -1,0 +1,12 @@
+<div class="layout">
+    <lo-main-header class="main-header" [title]="title" [subtitle]="subtitle"></lo-main-header>
+    <lo-breadcrumb [unit]="unit"></lo-breadcrumb>
+    <lo-nav-bar [elements]="menuBars.top"></lo-nav-bar>
+    <lo-course-container class="course-container"
+        [LOCurrentState]="LOCurrentState"
+        [innerNavBarData]="innerNavBarData"></lo-course-container>
+    <lo-secondary-nav-bar class="secondary-nav-bar"
+        [elements]="menuBars.bottom"></lo-secondary-nav-bar>
+    <lo-copyright class="copyright" [copyright]="copyright"></lo-copyright>
+</div>
+<lo-modal class="modal" [LOCurrentState]="LOCurrentState"></lo-modal>

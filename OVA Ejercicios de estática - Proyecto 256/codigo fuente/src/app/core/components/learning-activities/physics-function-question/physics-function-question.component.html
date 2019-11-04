@@ -1,0 +1,48 @@
+<div class="function-question-container">
+    <div class="function-question-header ">
+        <div class="name" *ngIf="exerciseName">
+            <p>{{exerciseName}}</p>
+        </div>
+        <div class="change-values-container" (click)="toggleChangeValues()">
+            <div class="change-values">
+                <div class="change-values-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="change-values-statement">
+                    <p class="statement">¡Ejercita tu cerebro! Prueba con otros valores y verifica las respuestas</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="change-variables-modal" *ngIf="changeValues">
+        <div class="change-variables-container">
+            <h2 class="change-variables-title">Modificar Valores</h2>
+            <div class="variable" *ngFor="let variable of variablesArray; let i = index">
+                <label for="variable-{{i}}">{{ variable.tag }} ({{ variable.ref }}): </label>
+                <input type="number" id="variable-{{i}}" [(ngModel)]="variable.value">
+                <div class="unit">{{ variable.unit }}</div>
+                <p class="invalid-value" *ngIf="variablesErrArray[i]"> El valor debe estar entre {{ variable.min }} y {{ variable.max }}. </p>
+            </div>
+            <button (click)="validateVariableValues()"> Aceptar </button>
+        </div>
+    </div>
+    <p class="physics-fn-question-statement">
+        <span class="inner-statement" [innerHTML]="getStatement()"></span>
+    </p>
+    <div class="question" *ngFor="let question of questions; let i = index">
+        <p class="question-statement">
+            <span class="question-number">{{i + 1}}.</span>
+            <span class="inner-statement" [innerHTML]="question.getStatement()"></span>
+        </p>
+        <div class="input-container">
+            <input type="{{question.options.type}}"
+                [(ngModel)]="answers[i]"
+                placeholder="{{question.options.placeholder}}"
+            />
+        </div>
+    </div>
+    <br>
+    <div class="function-question-btn" *ngIf="physicsFnQuestionData.submitBtn">
+        <button class="submit-btn" [disabled]="shouldDisableBtn()" (click)="submitInteraction()">{{ physicsFnQuestionData.submitBtn.tag }}</button>
+    </div>
+</div>

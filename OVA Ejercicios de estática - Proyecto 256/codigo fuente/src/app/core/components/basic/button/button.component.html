@@ -1,0 +1,5 @@
+<button *ngIf="text" 
+    [ngStyle]="btnStyle"
+    [ngClass]="{'is-active': isActive()}"
+    (click)="onClick()">{{text}}
+</button>

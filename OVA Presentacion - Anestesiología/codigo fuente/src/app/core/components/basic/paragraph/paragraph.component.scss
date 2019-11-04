@@ -1,0 +1,14 @@
+:host {  
+    &::ng-deep{
+        span{
+            &.bold{
+                font-weight: bold;
+                color: #333;
+            }
+
+            &.italic{
+                font-style: italic;
+            }
+        }
+    }
+}

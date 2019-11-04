@@ -1,0 +1,7 @@
+@import './lo/layout/layout.mixin';
+
+:host{
+    display: flex;
+    flex: 1;
+    font-family: "Ancizar sans", Tahoma, Geneva, sans-serif;
+}
